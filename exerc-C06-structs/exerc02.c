@@ -1,39 +1,38 @@
 // EXERCICIOS LINGUAGEM PROGRAMACAO 1 2024.1
 // C06 -> Structs
 // Problem -> 02
-// Finished by ?? Apr 2024
+// Finished by 30 Jun 2024
 
 #include <stdio.h>
 #include <string.h>
 
-struct Pessoa {
-  char nome[20];
+struct dados {
+  char nome[51];
   int idade;
-  char endereco[50];
+  char endereco[101];
 };
 
-int main()
-{
-  printf("C06-02\n\n");
+int main() {
   
-  struct Pessoa pessoa1;
+  struct dados cad001;
   
-  printf("Digite o nome: ");
-  fgets(pessoa1.nome, 20, stdin);
-  pessoa1.nome[strlen(pessoa1.nome)-1] = '\0';
+  printf("Digite nome, idade e endereço.\n");
+  printf("Nome: ");
+  fgets(cad001.nome, 50, stdin);
+  cad001.nome[strlen(cad001.nome)-1] = '\0';
   
-  printf("Digite a idade: ");
-  scanf("%d", &pessoa1.idade);
-  setbuf(stdin, NULL);
+  printf("Idade: ");
+  scanf("%d", &cad001.idade);
   
-  printf("Digite o endereço: ");
-  fgets(pessoa1.endereco, 50, stdin);
-  pessoa1.endereco[strlen(pessoa1.endereco)-1] = '\0';
+  printf("Endereço: ");
+  getchar();
+  fgets(cad001.endereco, 100, stdin);
+  cad001.endereco[strlen(cad001.endereco)-1] = '\0';
   
+  printf("-----------\n");
   
-  printf("\nNome: %s\n", pessoa1.nome);
-  printf("Idade: %d\n", pessoa1.idade);
-  printf("Endereço: %s\n", pessoa1.endereco);
-  
-  return 0;
+  printf("%s\n", cad001.nome);
+  printf("%d\n", cad001.idade);
+  printf("%s\n", cad001.endereco);
+    
 }
